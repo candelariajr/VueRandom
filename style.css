@@ -1,0 +1,23 @@
+*{
+    font-family: Arial, Verdana, sans-serif;
+    user-select: none;
+}
+
+#button{
+    color: white;
+    background-color: black;
+    margin-top: 10px;
+}
+
+.box{
+    padding: 100px 0;
+    width: 400px;
+    text-align: center;
+    background: #00fdd8;
+    margin: 20px;
+    display: inline-block;
+}
+
+ul>li{
+    list-style-type: square;
+}
