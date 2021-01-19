@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Vue</title>
+    <script src="https://unpkg.com/vue@3.0.2"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <h1>Hello Vue :)</h1>
+    <div id="app">
+        <div v-if="showBooks">
+            <ul>
+                <li v-for="book in books">
+                    <h3>{{book.title}}</h3>
+                    <p>{{book.author}}</p>
+                    <p v-if="book.age">{{book.age}}</p>
+                </li>
+            </ul>
+        </div>
+        <button @click="toggleShowBooks">
+            <span v-if="!showBooks">Show Books</span>
+            <span v-else>Hide Books</span>
+        </button>
+        <br><br>
+        <!--
+            <button @click="toggleShowBooks">
+                <span v-if="!showBooks">Show Books</span>
+                <span v-else>Hide Books</span>
+            </button>
+
+
+            Note: v-show manipulates the DOM with CSS. The v-if/else adds/removes DOM elements.
+            This means the show operation is less complex and takes up less time
+        -->
+        <div v-show="showBooks">Currently Showing Books</div>
+
+        <!-- Mouse Events -->
+        <div class="box" @mouseover="handleEvent($event, 5)">Mouseover (enter)</div>
+        <div class="box" @mouseleave="handleEvent">Mouseleave (exit)</div>
+        <div class="box" @dblclick="handleEvent">Double Click</div>
+        <div class="box" @mousemove="handleMousemove">Position : {{x}},{{y}}</div>
+
+    </div>
+    <p>not here</p>
+    <script src="app.js"></script>
+</body>
+</html>
